@@ -1,24 +1,6 @@
 from sqlalchemy.orm import Session
 from models.models import Product, Order, OrderItem
-from pydantic import BaseModel
-from typing import List, Optional
-from decimal import Decimal
-
-# Pydantic Schemas
-class ProductCreate(BaseModel):
-    name: str
-    price: Decimal
-    stock_qty: int
-
-class OrderItemCreate(BaseModel):
-    prod_id: int
-    qty_ordered: int
-
-class OrderCreate(BaseModel):
-    items: List[OrderItemCreate]
-
-class OrderStatusUpdate(BaseModel):
-    status: str
+from schema.schemas import ProductCreate, OrderCreate,OrderItemCreate
 
 # Database functions
 def create_product_db(db: Session, product: ProductCreate):
