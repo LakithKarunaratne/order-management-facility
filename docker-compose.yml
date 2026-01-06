@@ -26,5 +26,15 @@ services:
       - appdb
     restart: unless-stopped
 
+  ui:
+    build:
+      context: ./order-management-ui
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    depends_on:
+      - app
+
 volumes:
   postgres_data:
