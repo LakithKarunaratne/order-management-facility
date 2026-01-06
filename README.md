@@ -2,7 +2,24 @@
 
 To view the OpenAPI spec navigate to `/docs` in url path
 
-## Design descitions
+## Setup and Run
+
+create a `.env` file
+
+```
+DB_USER=testuser
+DB_PASS=testpassword
+DB_NAME=orders
+DB_PORT=5432
+DB_HOST=localhost
+API_APP_PORT=8080
+```
+
+Use docker to setup and run the file
+
+`docker compose up -d`
+
+## Design descisions
 
 ### Backend
 
@@ -63,23 +80,10 @@ Contains the below pages
 - some values are hardcoded
 - better state management can be implemented
 - DOM updates aren't realtime
+- ui needs test automations such as selenium , jest or playwright
 
-## Setup
+Using Docker NextJs Build modified Base Image instructions: https://github.com/mpash/pnpm-next-docker/tree/main, https://pnpm.io/docker
 
-create a `.env` file
-
-```
-DB_USER=testuser
-DB_PASS=testpassword
-DB_NAME=orders
-DB_PORT=5432
-DB_HOST=localhost
-API_APP_PORT=8080
-```
-
-Use docker to setup and run the file
-
-`docker compose up -d`
 
 ## Development
 
