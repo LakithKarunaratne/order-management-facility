@@ -17,7 +17,7 @@ def main():
 
     API_APP_PORT = int(os.getenv("API_APP_PORT", "8080"))
     # Standalone Runner
-    uvicorn.run('main:app', port=API_APP_PORT)
+    uvicorn.run('main:app', host='0.0.0.0', port=API_APP_PORT)
 
 
 if __name__ == "__main__":
