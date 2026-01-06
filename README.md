@@ -11,8 +11,7 @@ To view the OpenAPI spec navigate to `/docs` in url path
 - you might encounter warnings on your IDE, `api/functions.py` this is due to insufficient type hinting, defining crud functions at class level instead would solve it. 
 - relying on returned objects and their classes is not stable 
 
-- Using Vue.js for frontend due to simplicity and not needing the complex features of Next.js for this project
-
+- 
 
 ## Setup
 
@@ -48,6 +47,9 @@ use vite with pnpm for package management
 go to `cd order-management-ui`
 
 use `pnpm install` to install dependencies in directory
+
+use `pnpm run dev` to run dev instance
+
 
 ## Testing 
 
