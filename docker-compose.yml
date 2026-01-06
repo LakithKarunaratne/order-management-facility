@@ -10,6 +10,8 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     restart: unless-stopped
+    networks:
+      - default
 
   app:
     build: .
@@ -25,6 +27,8 @@ services:
     depends_on:
       - appdb
     restart: unless-stopped
+    networks:
+      - default
 
   ui:
     build:
@@ -35,6 +39,12 @@ services:
     restart: unless-stopped
     depends_on:
       - app
+    networks:
+      - default
 
 volumes:
   postgres_data:
+
+networks:
+  default:
+    driver: bridge
