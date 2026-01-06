@@ -1,11 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from db.config import get_db
-from .functions import (
-    ProductCreate, OrderCreate, OrderStatusUpdate,
+from api.functions import (
     create_product_db, get_products_db, create_order_db,
     get_orders_db, get_order_by_id_db, update_order_status_db
 )
+from schema.schemas import OrderCreate, ProductCreate,OrderStatusUpdate, OrderItemCreate
 
 router = APIRouter()
 
