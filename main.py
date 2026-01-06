@@ -2,7 +2,15 @@ from fastapi import FastAPI
 import uvicorn
 import os
 
-app = FastAPI()
+from api.core import router as core_api
+
+app = FastAPI(title="Order Management Facility")
+
+app.include_router(core_api)
+
+@app.get("/")
+def root():
+    return {"detail": "welcome to order-manangement-facility"}
 
 def main():
     print("Hello from hive-backend!")
