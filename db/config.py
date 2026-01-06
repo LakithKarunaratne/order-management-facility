@@ -25,17 +25,16 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 print("DB Connection String Loaded")
 
 
-
-# @contextmanager
-# def SessionManager() -> Session:
-#     db = SessionLocal()
-#     try:
-#         yield db
-#     except Exception as db_exception:
-#         # if we fail somehow rollback the connection
-#         warnings.warn("Failed in a DB operation and auto-rollback...")
-#         db.rollback()
-#         print(db_exception)
-#         raise
-#     finally:
-#         db.close()
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    except Exception as db_exception:
+        # if we fail somehow rollback the connection
+        warnings.warn("Failed in a DB operation and auto-rollback...")
+        db.rollback()
+        print(db_exception)
+        raise
+    finally:
+        db.close()
+    pass
