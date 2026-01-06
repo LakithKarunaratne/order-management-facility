@@ -10,7 +10,7 @@ app.include_router(core_api)
 
 @app.get("/")
 def root():
-    return {"detail": "welcome to order-manangement-facility"}
+    return {"detail": "welcome to order-manangement-facility, for docs navigate to `/docs`"}
 
 def main():
     print("Hello from hive-backend!")

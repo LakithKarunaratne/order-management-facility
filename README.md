@@ -1,5 +1,7 @@
 # Order Management Facility API
 
+To view the OpenAPI spec navigate to `/docs` in url path
+
 ## Setup
 
 create a `.env` file
@@ -25,3 +27,6 @@ Use `uv` for package management
 
 `uv run main.py` to run dev instance 
 
+## Testing 
+
+Run `uv run pytest` to run unit tests 
